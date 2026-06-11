@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Pra Você</title>
+  <title>Pra Você ❤️</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
 
@@ -17,21 +17,25 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:'Poppins', sans-serif;
+      font-family:'Quicksand', sans-serif;
     }
 
     body{
-      background:#050505;
+      background:linear-gradient(to bottom,#0b0b0b,#161616);
       color:white;
-      height:100vh;
-      overflow:hidden;
+      min-height:100vh;
+      overflow-x:hidden;
+
       display:flex;
       justify-content:center;
       align-items:center;
+
+      padding:25px;
+
       position:relative;
     }
 
-    /* estrelas */
+    /* fundo */
 
     .stars{
       position:absolute;
@@ -52,32 +56,42 @@
     }
 
     @keyframes brilho{
+
       from{
-        opacity:0.1;
+        opacity:0.2;
       }
 
       to{
         opacity:1;
       }
+
     }
 
-    /* container principal */
+    /* card */
 
     .container{
-      width:90%;
-      max-width:850px;
-      padding:50px;
-      background:rgba(255,255,255,0.03);
-      border:1px solid rgba(255,255,255,0.06);
-      backdrop-filter:blur(10px);
-      border-radius:25px;
-      z-index:2;
-      box-shadow:0 0 40px rgba(255,255,255,0.04);
+      width:100%;
+      max-width:700px;
 
-      animation: aparecer 2s ease;
+      background:rgba(255,255,255,0.05);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      border-radius:28px;
+
+      padding:35px 28px;
+
+      backdrop-filter:blur(10px);
+
+      box-shadow:0 0 35px rgba(255,255,255,0.04);
+
+      z-index:2;
+
+      animation: aparecer 1.5s ease;
     }
 
     @keyframes aparecer{
+
       from{
         opacity:0;
         transform:translateY(25px);
@@ -87,65 +101,94 @@
         opacity:1;
         transform:translateY(0);
       }
+
     }
 
     h1{
       text-align:center;
-      margin-bottom:40px;
-      font-weight:500;
-      font-size:42px;
-      letter-spacing:2px;
+      font-size:38px;
+      margin-bottom:30px;
+      font-weight:700;
+      color:#fff;
     }
 
-    .typing{
-      font-size:20px;
+    .texto{
+      font-size:19px;
       line-height:2;
-      color:#e7e7e7;
+      color:#ececec;
+
+      opacity:0;
+
+      transform:translateY(10px);
+
+      animation: textoSuave 2s ease forwards;
+
       white-space:pre-line;
-      border-right:2px solid white;
-      overflow:hidden;
-      animation: cursor .8s infinite;
-      min-height:450px;
     }
 
-    @keyframes cursor{
-      50%{
-        border-color:transparent;
+    @keyframes textoSuave{
+
+      from{
+        opacity:0;
+        transform:translateY(10px);
       }
-    }
 
-    /* botão */
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+
+    }
 
     button{
-      margin-top:35px;
       width:100%;
-      padding:16px;
+      margin-top:35px;
+
       border:none;
-      border-radius:14px;
-      background:white;
-      color:black;
+
+      padding:16px;
+
+      border-radius:16px;
+
       font-size:17px;
+
+      background:white;
+
+      color:#111;
+
       cursor:pointer;
+
       transition:0.3s;
-      font-weight:500;
+
+      font-weight:700;
     }
 
     button:hover{
+
       transform:scale(1.02);
-      background:#dcdcdc;
+
+      background:#ececec;
+
     }
 
     .extra{
-      margin-top:20px;
+
+      margin-top:22px;
+
       text-align:center;
-      color:#d4d4d4;
+
       font-size:17px;
+
+      color:#ffd1dc;
+
       display:none;
 
-      animation: fade 1.5s ease;
+      animation:fade 1.2s ease;
+
     }
 
     @keyframes fade{
+
       from{
         opacity:0;
       }
@@ -153,16 +196,17 @@
       to{
         opacity:1;
       }
+
     }
 
     /* corações */
 
     .heart{
       position:absolute;
-      color:#ff4d6d;
+      color:#ff7b9c;
       font-size:18px;
-      animation: subir 6s linear infinite;
-      opacity:0.5;
+      opacity:0.6;
+      animation:subir 7s linear infinite;
       z-index:1;
     }
 
@@ -174,7 +218,7 @@
       }
 
       20%{
-        opacity:0.5;
+        opacity:0.6;
       }
 
       to{
@@ -186,19 +230,27 @@
 
     /* celular */
 
-    @media(max-width:700px){
+    @media(max-width:600px){
+
+      body{
+        padding:18px;
+      }
 
       .container{
-        padding:30px;
+        padding:28px 22px;
       }
 
       h1{
-        font-size:32px;
+        font-size:31px;
       }
 
-      .typing{
+      .texto{
         font-size:17px;
-        min-height:520px;
+        line-height:1.9;
+      }
+
+      button{
+        font-size:16px;
       }
 
     }
@@ -212,29 +264,15 @@
 
   <div class="stars"></div>
 
-  <!-- conteúdo -->
+  <!-- card -->
 
   <div class="container">
 
-    <h1>Pra Você</h1>
+    <h1>Pra Você ❤️</h1>
 
-    <div class="typing" id="texto"></div>
+    <div class="texto">
 
-    <button onclick="mostrarMensagem()">
-      Não clica aqui
-    </button>
-
-    <div class="extra" id="extra">
-      Acho que você virou uma das minhas partes favoritas do dia ❤️
-    </div>
-
-  </div>
-
-  <script>
-
-    // TEXTO
-
-    const texto = `É estranho perceber como alguém começa a fazer parte dos teus dias sem nem tentar.
+É estranho perceber como alguém começa a fazer parte dos teus dias sem nem tentar.
 
 Tipo… no começo era só conversa normal.
 Só mais uma pessoa entre várias.
@@ -252,47 +290,44 @@ E sinceramente?
 isso é novo pra mim.
 
 Talvez eu ainda não saiba explicar exatamente o que isso significa.
-Mas sei que tua presença deixou meus dias diferentes de um jeito bom.`;
+Mas sei que tua presença deixou meus dias diferentes de um jeito bom.
 
-    let i = 0;
+    </div>
 
-    function escreverTexto(){
+    <button onclick="mostrarMensagem()">
+      Não aperta aqui 😊
+    </button>
 
-      if(i < texto.length){
+    <div class="extra" id="extra">
+      você conseguiu deixar meus dias mais leves sem nem perceber ❤️
+    </div>
 
-        document.getElementById("texto").innerHTML += texto.charAt(i);
+  </div>
 
-        i++;
+  <script>
 
-        setTimeout(escreverTexto, 28);
-
-      }
-
-    }
-
-    escreverTexto();
-
-    // ESTRELAS
+    // estrelas
 
     const stars = document.querySelector('.stars');
 
-    for(let i = 0; i < 140; i++){
+    for(let i = 0; i < 120; i++){
 
-      let star = document.createElement('div');
+      const star = document.createElement('div');
 
       star.classList.add('star');
 
       star.style.top = Math.random() * 100 + '%';
+
       star.style.left = Math.random() * 100 + '%';
 
       star.style.animationDuration =
-      (Math.random() * 4 + 2) + 's';
+      (Math.random() * 3 + 2) + 's';
 
       stars.appendChild(star);
 
     }
 
-    // CORAÇÕES
+    // corações
 
     function criarCoracao(){
 
@@ -302,7 +337,8 @@ Mas sei que tua presença deixou meus dias diferentes de um jeito bom.`;
 
       heart.innerHTML = '❤';
 
-      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.left =
+      Math.random() * 100 + 'vw';
 
       heart.style.fontSize =
       (Math.random() * 15 + 12) + 'px';
@@ -313,13 +349,13 @@ Mas sei que tua presença deixou meus dias diferentes de um jeito bom.`;
 
         heart.remove();
 
-      }, 6000);
+      }, 7000);
 
     }
 
-    setInterval(criarCoracao, 1200);
+    setInterval(criarCoracao, 1400);
 
-    // BOTÃO
+    // botão
 
     function mostrarMensagem(){
 
