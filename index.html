@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Pra Você 🤍</title>
+  <title>Pra Você ❤️</title>
 
+  <!-- Fonte -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
 
@@ -17,25 +18,28 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:'Nunito', sans-serif;
+      font-family:'Poppins', sans-serif;
     }
 
     body{
 
       min-height:100vh;
 
-      background:
-      radial-gradient(circle at top,#2a2a2a 0%,#111 45%,#080808 100%);
-
-      color:white;
+      overflow-x:hidden;
 
       display:flex;
       justify-content:center;
       align-items:center;
 
-      overflow:hidden;
-
       padding:20px;
+
+      background:
+      linear-gradient(
+      180deg,
+      #ffd9e5 0%,
+      #ffe7ef 35%,
+      #fff2f6 70%,
+      #fff8fb 100%);
 
       position:relative;
     }
@@ -46,37 +50,39 @@
 
       position:absolute;
 
-      width:350px;
-      height:350px;
-
-      background:rgba(255,255,255,0.05);
-
       border-radius:50%;
 
       filter:blur(90px);
 
-      animation:float 7s ease-in-out infinite;
+      opacity:0.5;
 
+      z-index:0;
+    }
+
+    .blur1{
+
+      width:280px;
+      height:280px;
+
+      background:#ff9fba;
+
+      top:-100px;
+      left:-80px;
+
+      animation:float 6s ease-in-out infinite;
     }
 
     .blur2{
 
-      position:absolute;
+      width:250px;
+      height:250px;
 
-      right:-100px;
-      bottom:-100px;
+      background:#ffd1df;
 
-      width:300px;
-      height:300px;
-
-      background:rgba(255,192,203,0.08);
-
-      border-radius:50%;
-
-      filter:blur(90px);
+      bottom:-90px;
+      right:-70px;
 
       animation:float2 8s ease-in-out infinite;
-
     }
 
     @keyframes float{
@@ -102,7 +108,7 @@
       }
 
       50%{
-        transform:translateY(25px);
+        transform:translateY(20px);
       }
 
       100%{
@@ -111,53 +117,57 @@
 
     }
 
-    /* card */
+    /* CARD */
 
     .card{
 
       width:100%;
-      max-width:720px;
+      max-width:760px;
 
-      background:rgba(255,255,255,0.06);
+      background:rgba(255,255,255,0.65);
 
-      border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(12px);
 
-      border-radius:32px;
+      border:1px solid rgba(255,255,255,0.4);
 
-      padding:45px 35px;
+      border-radius:35px;
 
-      backdrop-filter:blur(14px);
-
-      box-shadow:0 10px 40px rgba(0,0,0,0.4);
+      padding:45px 30px;
 
       position:relative;
 
       z-index:2;
 
-      animation:entrada 1.5s ease;
+      box-shadow:
+      0 10px 40px rgba(255,105,135,0.15);
+
+      animation:entrada 1.2s ease;
     }
 
     @keyframes entrada{
 
       from{
         opacity:0;
-        transform:translateY(30px);
+        transform:translateY(25px);
       }
 
       to{
         opacity:1;
-        transform:translateY(0);
+        transform:translateY(0px);
       }
 
     }
 
-    .emoji{
-
-      font-size:34px;
+    .topo{
 
       text-align:center;
 
-      margin-bottom:10px;
+      margin-bottom:30px;
+    }
+
+    .heartTop{
+
+      font-size:42px;
 
       animation:pulse 2s infinite;
     }
@@ -180,61 +190,76 @@
 
     h1{
 
-      text-align:center;
+      color:#ff5c8a;
+
+      margin-top:10px;
 
       font-size:38px;
 
-      margin-bottom:35px;
-
-      font-weight:700;
-
-      letter-spacing:1px;
+      font-weight:600;
     }
+
+    .sub{
+
+      margin-top:6px;
+
+      color:#c97c95;
+
+      font-size:15px;
+    }
+
+    /* TEXTO */
 
     .texto{
 
-      font-size:20px;
+      font-size:19px;
 
       line-height:2;
 
-      color:#efefef;
+      color:#5c4a52;
 
       white-space:pre-line;
 
-      animation:fade 2s ease;
+      opacity:0;
+
+      animation:fade 2s ease forwards;
+
+      animation-delay:0.4s;
     }
 
     @keyframes fade{
 
       from{
         opacity:0;
+        transform:translateY(10px);
       }
 
       to{
         opacity:1;
+        transform:translateY(0px);
       }
 
     }
 
+    /* linha */
+
     .linha{
 
-      width:80px;
+      width:85px;
       height:4px;
 
-      background:white;
+      background:#ffb3c7;
 
-      border-radius:20px;
+      border-radius:50px;
 
-      margin:30px auto 0 auto;
-
-      opacity:0.3;
+      margin:35px auto;
     }
+
+    /* botão */
 
     button{
 
       width:100%;
-
-      margin-top:35px;
 
       border:none;
 
@@ -242,13 +267,13 @@
 
       border-radius:18px;
 
-      background:white;
+      background:#ff7fa3;
 
-      color:#111;
+      color:white;
 
       font-size:17px;
 
-      font-weight:700;
+      font-weight:600;
 
       cursor:pointer;
 
@@ -257,36 +282,52 @@
 
     button:hover{
 
-      transform:translateY(-2px);
+      background:#ff628f;
 
-      background:#f1f1f1;
+      transform:translateY(-2px);
 
     }
 
-    .mensagem{
-
-      margin-top:22px;
-
-      text-align:center;
-
-      font-size:17px;
-
-      color:#ffd6e0;
+    .extra{
 
       display:none;
 
-      animation:fade 1s ease;
+      margin-top:20px;
+
+      text-align:center;
+
+      color:#ff5f8d;
+
+      font-size:17px;
+
+      animation:fade2 1s ease;
     }
 
-    /* coração fundo */
+    @keyframes fade2{
+
+      from{
+        opacity:0;
+      }
+
+      to{
+        opacity:1;
+      }
+
+    }
+
+    /* corações subindo */
 
     .heart{
 
       position:absolute;
 
-      color:rgba(255,255,255,0.08);
+      bottom:-20px;
 
-      animation:subir 10s linear infinite;
+      color:#ff8fb1;
+
+      opacity:0.7;
+
+      animation:subir linear forwards;
 
       z-index:1;
     }
@@ -294,27 +335,27 @@
     @keyframes subir{
 
       from{
-        transform:translateY(100vh);
+        transform:translateY(0) scale(1);
         opacity:0;
       }
 
-      30%{
-        opacity:1;
+      15%{
+        opacity:0.8;
       }
 
       to{
-        transform:translateY(-120px);
+        transform:translateY(-110vh) scale(1.6);
         opacity:0;
       }
 
     }
 
-    /* mobile */
+    /* RESPONSIVO */
 
-    @media(max-width:600px){
+    @media(max-width:650px){
 
       .card{
-        padding:35px 24px;
+        padding:35px 22px;
         border-radius:28px;
       }
 
@@ -338,14 +379,26 @@
 
 <body>
 
-  <div class="blur"></div>
-  <div class="blur2"></div>
+  <!-- brilho -->
+
+  <div class="blur blur1"></div>
+  <div class="blur blur2"></div>
+
+  <!-- card -->
 
   <div class="card">
 
-    <div class="emoji">🤍</div>
+    <div class="topo">
 
-    <h1>Pra Você</h1>
+      <div class="heartTop">❤️</div>
+
+      <h1>Pra Você</h1>
+
+      <div class="sub">
+        12 de Junho 😊
+      </div>
+
+    </div>
 
     <div class="texto">
 
@@ -374,11 +427,11 @@ Mas sei que tua presença deixou meus dias diferentes de um jeito bom.
     <div class="linha"></div>
 
     <button onclick="mostrarMensagem()">
-      aperta aqui 😊
+      aperta aqui ❤️
     </button>
 
-    <div class="mensagem" id="mensagem">
-      você tem um jeitinho que consegue deixar tudo mais leve 🤍
+    <div class="extra" id="extra">
+      acho que você conseguiu deixar meus dias mais leves sem nem perceber 😊
     </div>
 
   </div>
@@ -389,7 +442,7 @@ Mas sei que tua presença deixou meus dias diferentes de um jeito bom.
 
     function mostrarMensagem(){
 
-      document.getElementById('mensagem').style.display = 'block';
+      document.getElementById("extra").style.display = "block";
 
     }
 
@@ -397,17 +450,21 @@ Mas sei que tua presença deixou meus dias diferentes de um jeito bom.
 
     function criarCoracao(){
 
-      const heart = document.createElement('div');
+      const heart =
+      document.createElement("div");
 
-      heart.classList.add('heart');
+      heart.classList.add("heart");
 
-      heart.innerHTML = '🤍';
+      heart.innerHTML = "❤";
 
       heart.style.left =
-      Math.random() * 100 + 'vw';
+      Math.random() * 100 + "vw";
 
       heart.style.fontSize =
-      (Math.random() * 18 + 10) + 'px';
+      (Math.random() * 18 + 12) + "px";
+
+      heart.style.animationDuration =
+      (Math.random() * 3 + 6) + "s";
 
       document.body.appendChild(heart);
 
@@ -415,11 +472,11 @@ Mas sei que tua presença deixou meus dias diferentes de um jeito bom.
 
         heart.remove();
 
-      }, 10000);
+      }, 9000);
 
     }
 
-    setInterval(criarCoracao, 1800);
+    setInterval(criarCoracao, 600);
 
   </script>
 
